@@ -1,0 +1,20 @@
+body{
+    
+}
+
+.headder{
+    background-color: aqua;
+    color: white;
+    
+}
+
+.headder h1 a{
+    color:orange;
+}
+
+.body{
+    text-align:center;
+}
+.top_body{
+    background: url(StudioReservingSystem\app\assets\images\homepic.jpg);
+}
