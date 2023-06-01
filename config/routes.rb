@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "/reserve" => "reserve#top"
+  get "reserve/calender" => "reserve#calender"
   get "/ueer/new" => "user#new"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get '/about' => "home#about"
