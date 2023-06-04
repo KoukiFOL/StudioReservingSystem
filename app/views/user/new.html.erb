@@ -1,9 +1,13 @@
 <div class="top_body">
-    <%=form_with url: /user/login do |form| %>
+    <%= form_tag("/login",{multipart: true}) do %>
         <p>名前</p>
-        <%= form.text_field :name %>
-        <p>Password</p>
-        <%= form.text_field :password %>
-        <%= f.submit %>
+        <input name="number">
+        <p>学生証番号</p>
+        <input name="number">
+        <p>生年月日</p>
+        <input name="birthbay" type="date">
+        <p>パスワード</p>
+        <input name="password" type="password">
+        <input name="submit" type="submit" value="作成">
     <% end %>
 </div>
