@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-    def login 
-
+    def usercheck
+        @users = User.all
     end
 end

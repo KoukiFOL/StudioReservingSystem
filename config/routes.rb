@@ -10,13 +10,15 @@ Rails.application.routes.draw do
   get "/" => "home#top"
 
   #user
-  
   get "/new" => "user#new"
   post "new" => "user#create"
   get "/user/new" => "user#new"
-  
+
   get "/login" => "user#login_form"
   post "/login" => "user#login"
+
+  get "/logout" => "user#logout"
+  post "/logout" => "user#logout"
 
   #reserve
   get "/reserve" => "reserve#top"
@@ -26,6 +28,5 @@ Rails.application.routes.draw do
   #admin
   get "/admin/usercheck"=> "admin#usercheck"
   get "/admin" => "admin#top"
-  
   
 end

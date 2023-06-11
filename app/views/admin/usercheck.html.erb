@@ -1,0 +1,24 @@
+<h2>全ユーザー管理</h2>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>学生証番号</th>
+        <th>名前</th>
+        <th>生年月日</th>
+        <th>作成日</th>
+        <th>管理者権限</th>
+        
+    </tr>
+    <tr>
+        <% @users.each do |user| %>
+            <th><%= user.id %></th>
+            <th><%= user.number %></th>
+            <th><%= user.name %></th>
+            <th><%= user.birthday %></th>
+            <th><%= user.created_at %></th>
+            <th><%= user.admin %>
+        <% end %>
+    </tr>
+</table>
+<h3>管理者権限欄の見かた</h3>
+<p>0=作成者 1=幹部 2=部員</p>

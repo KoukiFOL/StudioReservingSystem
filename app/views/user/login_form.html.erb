@@ -1,7 +1,5 @@
 <div class="top_body">
-    <% if @error %>
-    <p class="error"><%= @error %></p>
-    <% end %>
+    
     <%= form_tag("/login",{multipart: true}) do %>
         <p>学生証番号</p>
         <input name="number" value="">

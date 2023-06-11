@@ -13,4 +13,9 @@ class UserController < ApplicationController
             render("user/login_form")
         end
     end
+
+    def logout
+        session[:number] = nil
+        redirect_to("/login")
+    end
 end
