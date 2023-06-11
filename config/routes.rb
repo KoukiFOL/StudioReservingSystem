@@ -5,22 +5,27 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  #admin
-  get "/admin/usercheck"=> "admin#usercheck"
-  get "/admin" => "admin#top"
+  #home
+  get "/about" => "home#about"
+  get "/" => "home#top"
+
+  #user
+  
+  get "/new" => "user#new"
+  post "new" => "user#create"
+  get "/user/new" => "user#new"
+  
+  get "/login" => "user#login_form"
+  post "/login" => "user#login"
 
   #reserve
   get "/reserve" => "reserve#top"
   get "reserve/calender" => "reserve#calender"
   get "/ueer/new" => "user#new"
 
-  #user
-  get "/user/new" => "user#new"
-  get "/login" => "user#login"
-  get "/new" => "user#new"
+  #admin
+  get "/admin/usercheck"=> "admin#usercheck"
+  get "/admin" => "admin#top"
   
-  #home
-  get "/about" => "home#about"
-  get "/" => "home#top"
   
 end

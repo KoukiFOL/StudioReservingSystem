@@ -13,14 +13,20 @@
   <body>
     <div class="headder">
       <h2><%= link_to("京都産業大学 軽音楽部ポータル", "/") %></h2>
+      <% current_user = User.find_by(id:session[:user_number]) %>
       <p>
         <%= link_to("どんなアプリ？", "/about") %>
         <%= link_to("新規作成", "/new") %>
         <%= link_to("ログイン", "/login") %>
         <%= link_to("管理者", "/admin") %>
+        <%="こんにちは！#{@user.name}"%>
+
       </p>
-     
     </div>
+    <div cladss="notice">
+      <p><%= flash[:notice] %></p>
+    </div>
+    
     <div class="body">
       <%= yield %>
     </div>

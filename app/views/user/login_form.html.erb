@@ -1,9 +1,12 @@
 <div class="top_body">
+    <% if @error %>
+    <p class="error"><%= @error %></p>
+    <% end %>
     <%= form_tag("/login",{multipart: true}) do %>
         <p>学生証番号</p>
-        <input name="number">
+        <input name="number" value="">
         <p>パスワード</p>
-        <input name="password" type="password">
+        <input name="password" type="password" value="">
         <input name="submit" type="submit" value="ログイン">
     <% end %>
     <p><%= link_to("幹部用即席ログイン", "")%>

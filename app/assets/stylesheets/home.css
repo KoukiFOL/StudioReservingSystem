@@ -18,3 +18,10 @@ body{
 .top_body{
     background: url(StudioReservingSystem\app\assets\images\homepic.jpg);
 }
+.error{
+    color: red;
+}
+.notice{
+    background-color: red;
+    color:white;
+}
