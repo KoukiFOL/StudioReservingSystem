@@ -33,3 +33,7 @@ body{
     color:white;
     text-align: center;
 }
+textarea {
+	width: 300px;  /* 横幅 */
+	height: 200px; /* 高さ */
+}

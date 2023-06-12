@@ -9,16 +9,18 @@
         <th>管理者権限</th>
         
     </tr>
+    
+    <% @users.each do |user| %>
     <tr>
-        <% @users.each do |user| %>
-            <th><%= user.id %></th>
-            <th><%= user.number %></th>
-            <th><%= user.name %></th>
-            <th><%= user.birthday %></th>
-            <th><%= user.created_at %></th>
-            <th><%= user.admin %>
-        <% end %>
-    </tr>
+        <th><%= user.id %></th>
+        <th><%= user.number %></th>
+        <th><%= user.name %></th>
+        <th><%= user.birthday %></th>
+        <th><%= user.created_at %></th>
+        <th><%= user.admin %>
+    </tr>    
+    <% end %>
+    
 </table>
 <h3>管理者権限欄の見かた</h3>
 <p>0=作成者 1=幹部 2=部員</p>

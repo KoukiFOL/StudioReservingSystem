@@ -1,7 +1,8 @@
 <div class="top_body">
-    <%= form_tag("/login",{multipart: true}) do %>
+    <h2>アカウント登録</h2>
+    <%= form_tag("/new",{multipart: true}) do %>
         <p>名前</p>
-        <input name="number">
+        <input name="name">
         <p>学生証番号</p>
         <input name="number">
         <p>生年月日</p>

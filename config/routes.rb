@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   get "/" => "home#top"
 
   #user
-  get "/new" => "user#new"
-  post "new" => "user#create"
-  get "/user/new" => "user#new"
+  get "/new" => "user#signup"
+  post "/new" => "user#new"
 
   get "/login" => "user#login_form"
   post "/login" => "user#login"
+
+  get "/edit" => "user#edit_form"
+  post"edit" => "user#update"
 
   get "/logout" => "user#logout"
   post "/logout" => "user#logout"

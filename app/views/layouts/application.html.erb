@@ -15,11 +15,14 @@
       <h2><%= link_to("京都産業大学 軽音楽部ポータル", "/") %></h2>
       <% current_user = User.find_by(id:session[:user_number]) %>
       <% if @current_user %>
-        <p><%="こんにちは！#{@current_user.name}さん"%></p>
+        <p>
+          <%= "こんにちは！#{@current_user.name}さん" %>
+          <%= link_to("[編集]", "/edit") %>
+        </p>
       <% end %>
       <p>
         <%= link_to("どんなアプリ？", "/about") %>
-        <%= link_to("新規作成", "/new") %>
+        <%= link_to("新規登録", "/new") %>
         <%= link_to("ログイン", "/login") %>
         <%= link_to("管理者", "/admin") %>
         <%= link_to("ログアウト", "/logout") %>

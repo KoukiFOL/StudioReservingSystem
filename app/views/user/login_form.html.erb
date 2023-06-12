@@ -1,5 +1,5 @@
 <div class="top_body">
-    
+    <h2>ログイン</h2>
     <%= form_tag("/login",{multipart: true}) do %>
         <p>学生証番号</p>
         <input name="number" value="">
@@ -7,5 +7,5 @@
         <input name="password" type="password" value="">
         <input name="submit" type="submit" value="ログイン">
     <% end %>
-    <p><%= link_to("幹部用即席ログイン", "")%>
+    <p><%= link_to("幹部用即席ログイン", "")%></p>
 </div>
