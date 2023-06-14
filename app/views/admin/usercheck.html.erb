@@ -13,7 +13,7 @@
     <% @users.each do |user| %>
     <tr>
         <th><%= user.id %></th>
-        <th><%= user.number %></th>
+        <th><%= link_to(user.number, "/admin/#{user.id}") %></th>
         <th><%= user.name %></th>
         <th><%= user.birthday %></th>
         <th><%= user.created_at %></th>

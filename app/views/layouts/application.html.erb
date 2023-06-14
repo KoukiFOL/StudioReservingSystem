@@ -17,7 +17,7 @@
       <% if @current_user %>
         <p>
           <%= "こんにちは！#{@current_user.name}さん" %>
-          <%= link_to("[編集]", "/edit") %>
+          <%= link_to("[編集]", "/:id/edit") %>
         </p>
       <% end %>
       <p>

@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   get "/login" => "user#login_form"
   post "/login" => "user#login"
 
-  get "/edit" => "user#edit_form"
-  post"edit" => "user#update"
+  get "/:id/edit" => "user#edit_form"
+  post"/:id/update" => "user#update"
 
   get "/logout" => "user#logout"
   post "/logout" => "user#logout"
@@ -25,10 +25,10 @@ Rails.application.routes.draw do
   #reserve
   get "/reserve" => "reserve#top"
   get "reserve/calender" => "reserve#calender"
-  get "/ueer/new" => "user#new"
+  get "/user/new" => "user#new"
 
   #admin
-  get "/admin/usercheck"=> "admin#usercheck"
   get "/admin" => "admin#top"
-  
+  get "/admin/usercheck"=> "admin#usercheck"
+  get "/admin/:id" =>"admin#usercheck"
 end

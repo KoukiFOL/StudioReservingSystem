@@ -1,12 +1,12 @@
 <div class="top_body">
     <h2>ユーザー情報編集</h2>
-    <%= form_tag("/update",{multipart: true}) do %>
+    <%= form_tag("/user/#{@user.id}/update",{multipart: true}) do %>
         <p>名前</p>
         <input name="name" value="<%= @user.name %>">
         <p>学生証番号</p>
-        <<p><%= @user.number %></p>
+        <p><%= @user.number %></p>
         <p>生年月日</p>
-        <input name="birthbay" type="date" value="<%= @user.birthday %>"
+        <input name="birthbay" type="date" value="<%= @user.name %>"
         <p>自己紹介</p>
         <textarea name="info"></textarea>
         <input type="submit" value="完了">

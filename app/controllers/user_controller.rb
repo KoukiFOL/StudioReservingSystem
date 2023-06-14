@@ -34,12 +34,15 @@ class UserController < ApplicationController
     end
 
     def edit
-        @user = User.find_by(number: session[:number])
+        @user = User.find_by(session)
     end
 
     def update
-
+        @user = User.find_by(session)
+        if @user
+            
     end
+    
     def logout
         session[:number] = nil
         redirect_to("/login")
