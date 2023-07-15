@@ -15,6 +15,7 @@ class UserController < ApplicationController
         elsif @user.save
             session[:number] = @user.number
            redirect_to("/")
+           @error="アカウントが生成されました。"
         else
             @error = "内容が正しく記述されているか確認してください。"
             render("user/signup")
@@ -34,14 +35,33 @@ class UserController < ApplicationController
     end
 
     def edit
-        @user = User.find_by(session)
+        if @current_user.id != params[:id].to_i
+            @error = "このアカウントは編集できません"
+            redirect_to("/")
+        end
+        @user = User.find_by(id:params[:id])
+
+
     end
 
     def update
-        @user = User.find_by(session)
-        if @user
-            
+
+        @user = User.find_by(id:params[:id])
+        @user.update =(
+           name: params[:name],
+           birthday: params[:birthday],
+           info: params[:info] 
+        )
+
+        if @user.save
+            @error = "変更を保存しました"
+            redirect_to("/")
+        else
+            @error = "変更保存時に問題が発生しました。症状が改善しない場合は#{@manager}まで"
+            render("/user/edit_form")
+        end
     end
+
     
     def logout
         session[:number] = nil

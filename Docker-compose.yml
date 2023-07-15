@@ -1,36 +1,23 @@
-version: '2'
+version: '7.0.4.3'
 services:
-  rails:
-    build: .
-    image: my/rails
-    container_name: 'rails'
-    tty: true
-    ports:
-      - "80:3000"
-    environment:
-      APP_DATABASE: 'example'
-      APP_DATABASE_USER: 'app'
-      APP_DATABASE_PASSWORD: 'development'
-    volumes:
-      - app-data:/usr/src/app
-    depends_on:
-      - mysql
-
-  mysql:
+  db:
+    platform: linux/amd64
     image: mysql:5.7
-    container_name: 'mysql'
-    environment:
-      MYSQL_ROOT_PASSWORD: 'mysql'
-      MYSQL_DATABASE: 'example'
-      MYSQL_USER: 'app'
-      MYSQL_PASSWORD: 'development'
-    ports:
-      - '3306:3306'
     volumes:
-      - mysql-data:/var/lib/mysql
+      - data-volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+  web:
+    build: .
+    command: /bin/sh -c "rm -f /app/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
 
 volumes:
-  app-data:
-     driver: local
-  mysql-data:
-    driver: local
+  data-volume:
