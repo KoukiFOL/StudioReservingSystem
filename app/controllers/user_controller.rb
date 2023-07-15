@@ -47,11 +47,9 @@ class UserController < ApplicationController
     def update
 
         @user = User.find_by(id:params[:id])
-        @user.update =(
-           name: params[:name],
-           birthday: params[:birthday],
-           info: params[:info] 
-        )
+
+        @user.update(name: params[:name], birthday: params[:birthday], info: params[:info])
+       
 
         if @user.save
             @error = "変更を保存しました"

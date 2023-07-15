@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   post "/login" => "user#login"
 
   get "/:id/edit" => "user#edit"
-  post "/update"=> "user#update"
+  post "/:id/edit" => "user#edit"
+
+  get "/:id/update"=> "user#update"
+  post "/:id/update"=> "user#update"
 
 
   get "/logout" => "user#logout"
